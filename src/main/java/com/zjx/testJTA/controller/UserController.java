@@ -25,7 +25,7 @@ public class UserController {
     @RequestMapping("/add")
     @Transactional
     public String addUser(User user){
-        //userRepository.save(user); 我修改的第一次
+        //userRepository.save(user); 我修改的第2次
         jmsTemplate.convertAndSend("testQueue",user.getName());
         return "ok";
     }
